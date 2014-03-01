@@ -25,7 +25,8 @@
   "dependencies": {
     "co": "3.0.4",
     "co-fs": "1.1.1",
-    "eventproxy": "0.2.7"
+    "eventproxy": "0.2.7",
+    "thunkify-wrap": "0.0.3"
   },
   "devDependencies": {
 
