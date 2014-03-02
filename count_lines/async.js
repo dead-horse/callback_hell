@@ -43,7 +43,7 @@ function count(dirname) {
         return cb(err);
       }
       contents.forEach(function (content, i) {
-        console.log('%s have %d lines', files[i],
+        console.log('%s has %d lines', files[i],
           content.toString().split('\n').length);
       });
     });

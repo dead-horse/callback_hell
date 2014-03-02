@@ -44,7 +44,7 @@ function count(dirname) {
   });
 
   ep.on('content', function (c) {
-    console.log('%s have %d lines', c.filepath, c.content.split('\n').length);
+    console.log('%s has %d lines', c.filepath, c.content.split('\n').length);
   });
 }
 

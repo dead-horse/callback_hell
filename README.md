@@ -15,6 +15,7 @@ Examples for callback hell
 
 ### Series
 
+* [nested](https://github.com/dead-horse/callback_hell/blob/master/series/callback.js)
 * [async](https://github.com/dead-horse/callback_hell/blob/master/series/async.js)
 * [eventproxy](https://github.com/dead-horse/callback_hell/blob/master/series/eventproxy.js)
 * [generator && co](https://github.com/dead-horse/callback_hell/blob/master/series/generator.js)
@@ -23,6 +24,7 @@ Examples for callback hell
 
 ### parallel
 
+* [nested](https://github.com/dead-horse/callback_hell/blob/master/parallel/callback.js)
 * [async](https://github.com/dead-horse/callback_hell/blob/master/parallel/async.js)
 * [eventproxy](https://github.com/dead-horse/callback_hell/blob/master/parallel/eventproxy.js)
 * [generator && co](https://github.com/dead-horse/callback_hell/blob/master/parallel/generator.js)
@@ -35,29 +37,30 @@ count all js files' total line in giving folder.
 
 ```
 $ node count_lines/async.js .
-/Users/deadhorse/git/callback_hell/parallel/async.js have 36 lines
-/Users/deadhorse/git/callback_hell/parallel/callback.js have 33 lines
-/Users/deadhorse/git/callback_hell/parallel/eventproxy.js have 30 lines
-/Users/deadhorse/git/callback_hell/parallel/generator.js have 21 lines
-/Users/deadhorse/git/callback_hell/parallel/proxy.js have 19 lines
-/Users/deadhorse/git/callback_hell/parallel/q.js have 31 lines
-/Users/deadhorse/git/callback_hell/parallel/step.js have 34 lines
-/Users/deadhorse/git/callback_hell/count_lines/async.js have 54 lines
-/Users/deadhorse/git/callback_hell/count_lines/callback.js have 39 lines
-/Users/deadhorse/git/callback_hell/count_lines/eventproxy.js have 52 lines
-/Users/deadhorse/git/callback_hell/count_lines/generator.js have 34 lines
-/Users/deadhorse/git/callback_hell/count_lines/q.js have 55 lines
-/Users/deadhorse/git/callback_hell/count_lines/step.js have 72 lines
-/Users/deadhorse/git/callback_hell/count_lines/utils.js have 15 lines
-/Users/deadhorse/git/callback_hell/series/async.js have 19 lines
-/Users/deadhorse/git/callback_hell/series/callback.js have 24 lines
-/Users/deadhorse/git/callback_hell/series/eventproxy.js have 23 lines
-/Users/deadhorse/git/callback_hell/series/generator.js have 22 lines
-/Users/deadhorse/git/callback_hell/series/proxy.js have 22 lines
-/Users/deadhorse/git/callback_hell/series/q.js have 15 lines
-/Users/deadhorse/git/callback_hell/series/step.js have 27 lines
+/Users/deadhorse/git/callback_hell/parallel/async.js has 36 lines
+/Users/deadhorse/git/callback_hell/parallel/callback.js has 33 lines
+/Users/deadhorse/git/callback_hell/parallel/eventproxy.js has 30 lines
+/Users/deadhorse/git/callback_hell/parallel/generator.js has 21 lines
+/Users/deadhorse/git/callback_hell/parallel/proxy.js has 19 lines
+/Users/deadhorse/git/callback_hell/parallel/q.js has 31 lines
+/Users/deadhorse/git/callback_hell/parallel/step.js has 34 lines
+/Users/deadhorse/git/callback_hell/count_lines/async.js has 54 lines
+/Users/deadhorse/git/callback_hell/count_lines/callback.js has 39 lines
+/Users/deadhorse/git/callback_hell/count_lines/eventproxy.js has 52 lines
+/Users/deadhorse/git/callback_hell/count_lines/generator.js has 34 lines
+/Users/deadhorse/git/callback_hell/count_lines/q.js has 55 lines
+/Users/deadhorse/git/callback_hell/count_lines/step.js has 72 lines
+/Users/deadhorse/git/callback_hell/count_lines/utils.js has 15 lines
+/Users/deadhorse/git/callback_hell/series/async.js has 19 lines
+/Users/deadhorse/git/callback_hell/series/callback.js has 24 lines
+/Users/deadhorse/git/callback_hell/series/eventproxy.js has 23 lines
+/Users/deadhorse/git/callback_hell/series/generator.js has 22 lines
+/Users/deadhorse/git/callback_hell/series/proxy.js has 22 lines
+/Users/deadhorse/git/callback_hell/series/q.js has 15 lines
+/Users/deadhorse/git/callback_hell/series/step.js has 27 lines
 ```
 
+* [nested](https://github.com/dead-horse/callback_hell/blob/master/count_lines/callback.js)
 * [async](https://github.com/dead-horse/callback_hell/blob/master/count_lines/async.js)
 * [eventproxy](https://github.com/dead-horse/callback_hell/blob/master/count_lines/eventproxy.js)
 * [generator && co](https://github.com/dead-horse/callback_hell/blob/master/count_lines/generator.js)

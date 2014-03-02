@@ -19,7 +19,7 @@ function *count(dirname) {
 
     if (utils.isJs(filename)) {
       var content = yield fs.readFile(filepath, 'utf8');
-      console.log('%s have %d lines', filepath, content.split('\n').length);
+      console.log('%s has %d lines', filepath, content.split('\n').length);
     }
   }
 }

@@ -27,7 +27,7 @@ function count(dirname) {
             if (err) {
               return console.error(err.stack);
             }
-            console.log('%s have %d lines', filepath, content.split('\n').length);
+            console.log('%s has %d lines', filepath, content.split('\n').length);
           });
         }
       });

@@ -45,7 +45,7 @@ function count(dirname) {
   function countFiles(contents) {
     var filepaths = contents.shift();
     for (var i = 0; i < filepaths.length; i++) {
-      console.log('%s have %d lines', filepaths[i],
+      console.log('%s has %d lines', filepaths[i],
           contents[i].split('\n').length);
     }
   }
