@@ -1,26 +1,28 @@
 
 var fs = require('fs');
 var path = require('path');
-
-var dirname = path.resolve(process.argv[2] || __dirname);
+var utils = require('./utils');
 
 // count the total lines of js files
 
-function countJs(dirname) {
+function count(dirname) {
   fs.readdir(dirname, function (err, files) {
     if (err) {
       return console.error(err.stack);
     }
+
     files.forEach(function (filename) {
       var filepath = path.join(dirname, filename);
       fs.stat(filepath, function (err, stat) {
         if (err) {
           return console.error(err.stack);
         }
-        if (!stat.isFile() && filename !== 'node_modules' && filename[0] !== '.') {
-          return countJs(filepath);
+
+        if (!stat.isFile() && utils.validFolder(filename)) {
+          return count(filepath);
         }
-        if (path.extname(filename) === '.js') {
+
+        if (utils.isJs(filename)) {
           fs.readFile(filepath, 'utf8', function (err, content) {
             if (err) {
               return console.error(err.stack);
@@ -33,4 +35,4 @@ function countJs(dirname) {
   });
 }
 
-countJs(dirname);
+count(utils.getDir());

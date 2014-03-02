@@ -2,10 +2,9 @@
 var fs = require('fs');
 var path = require('path');
 var Eventproxy = require('eventproxy');
+var utils = require('./utils');
 
-var dirname = path.resolve(process.argv[2] || __dirname);
-
-function countJs(dirname) {
+function count(dirname) {
   var ep = Eventproxy.create();
   ep.fail(function (err) {
     console.error(err.stack);
@@ -30,10 +29,11 @@ function countJs(dirname) {
     var stat = s.stat;
     var filepath = s.filepath;
     var filename = s.filename;
-    if (!stat.isFile() && filename !== 'node_modules' && filename[0] !== '.') {
-      return countJs(filepath);
+    if (!stat.isFile() && utils.validFolder(filename)) {
+      return count(filepath);
     }
-    if (path.extname(filename) === '.js') {
+
+    if (utils.isJs(filename)) {
       fs.readFile(filepath, 'utf8', ep.doneLater(function (content) {
         ep.emit('content', {
           filepath: filepath,
@@ -48,4 +48,4 @@ function countJs(dirname) {
   });
 }
 
-countJs(dirname);
+count(utils.getDir());
