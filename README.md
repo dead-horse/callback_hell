@@ -10,6 +10,8 @@ Examples for callback hell
 * [generator && co](https://github.com/visionmedia/co)
 * [q](https://github.com/kriskowal/q)
 * [step](https://github.com/creationix/step)
+* [Wind.js](http://windjs.org/cn/)
+* [Sep](https://github.com/substack/node-seq)
 
 ## Examples
 
@@ -30,6 +32,12 @@ Examples for callback hell
 * [generator && co](https://github.com/dead-horse/callback_hell/blob/master/parallel/generator.js)
 * [q](https://github.com/dead-horse/callback_hell/blob/master/parallel/q.js)
 * [step](https://github.com/dead-horse/callback_hell/blob/master/parallel/step.js)
+
+### Limitedly parallel
+
+* [async](https://github.com/dead-horse/callback_hell/blob/master/limited_parallel/async.js)
+* [generator](https://github.com/dead-horse/callback_hell/blob/master/limited_parallel/generator.js)
+
 
 ### count_lines
 
@@ -66,6 +74,15 @@ $ node count_lines/async.js .
 * [generator && co](https://github.com/dead-horse/callback_hell/blob/master/count_lines/generator.js)
 * [q](https://github.com/dead-horse/callback_hell/blob/master/count_lines/q.js)
 * [step](https://github.com/dead-horse/callback_hell/blob/master/count_lines/step.js)
+
+
+
+### Resource
+
+* [Mixu's Node book--Contro flow](http://book.mixu.net/node/ch7.html)
+* [Selecting a javascript flow control solution](https://github.com/scriby/asyncblock/wiki/Selecting-a-javascript-flow-control-solution)
+* [Dailyjs -- New Control Flow Libraries](http://dailyjs.com/2012/02/20/new-flow-control-libraries/)
+* [Asynchronous JS: Callbacks, Listeners, Control Flow Libs and Promises](http://sporto.github.io/blog/2012/12/09/callbacks-listeners-promises/)
 
 ## More
 
