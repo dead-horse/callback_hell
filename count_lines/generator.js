@@ -4,7 +4,7 @@ var path = require('path');
 var co = require('co');
 var utils = require('./utils');
 
-function *count(dirname) {
+function *_count(dirname) {
   var files = yield fs.readdir(dirname);
 
   for (var i = 0; i < files.length; i++) {
@@ -13,7 +13,10 @@ function *count(dirname) {
     var stat = yield fs.stat(filepath);
 
     if (!stat.isFile() && utils.validFolder(filename)) {
-      yield *count(filepath);
+      // do not wait, just count the subdir
+      count(filepath, function (err) {
+        err && console.error(err.stack);
+      });
       continue;
     }
 
@@ -23,11 +26,8 @@ function *count(dirname) {
     }
   }
 }
+var count = co(_count);
 
-co(function*() {
-  try {
-    yield *count(utils.getDir());
-  } catch (err) {
-    console.error(err.stack);
-  }
-})();
+count(utils.getDir(), function (err) {
+  err && console.error(err.stack);
+});

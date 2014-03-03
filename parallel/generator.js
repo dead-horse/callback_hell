@@ -5,16 +5,18 @@ var proxy = require('./proxy');
 
 proxy = thunkify(proxy);
 
-function *get() {
-  var user = yield proxy.getUser;
-  var r = yield [proxy.getPosts(user), proxy.getComments(user)];
-  return {
-    user: user,
-    posts: r[0],
-    comments: r[1]
-  };
-}
 
-co(function *() {
-  console.log(yield get);
-})();
+var get = co(function *_get() {
+  var user = yield proxy.getUser;
+  return yield {
+    user: user,
+    posts: proxy.getPosts(user),
+    comments: proxy.getComments(user)
+  };
+});
+
+get(function (err, res) {
+  err
+  ? console.error(err.stack)
+  : console.log(res);
+});

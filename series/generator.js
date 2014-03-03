@@ -5,17 +5,14 @@ var proxy = require('./proxy');
 
 proxy = thunkify(proxy);
 
-function *remove() {
+var remove  = co(function *remove() {
   yield proxy.removeUser();
   yield proxy.removePosts();
   yield proxy.removeComments();
-}
+});
 
-co(function *() {
-  try {
-    yield remove;
-  } catch (err) {
-    return console.error(err);
-  }
-  console.log('remove ok');
-})();
+remove(function (err) {
+  err
+  ? console.error(err.stack)
+  : console.log('remove ok');
+});
