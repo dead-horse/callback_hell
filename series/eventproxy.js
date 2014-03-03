@@ -15,8 +15,7 @@ function remove(callback) {
 }
 
 remove(function (err, res) {
-  if (err) {
-    return console.error(err);
-  }
-  console.log('remove ok');
+  err
+  ? console.error(err.stack)
+  : console.log('remove ok');
 });

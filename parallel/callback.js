@@ -25,8 +25,7 @@ function get(callback) {
 }
 
 get(function (err, res) {
-  if (err) {
-    return console.error(err);
-  }
-  console.log(res);
+  err
+  ? console.error(err.stack)
+  : console.log(res);
 });

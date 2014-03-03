@@ -6,13 +6,14 @@ function get(callback) {
   var ep = Eventproxy.create();
   ep.fail(callback);
 
-  proxy.getUser(ep.doneLater('user'));
+  proxy.getUser(ep.done('user'));
   ep.once('user', function (user) {
     proxy.getPosts(user, ep.done('posts'));
     proxy.getComments(user, ep.done('comments'));
   });
 
-  ep.all('user', 'posts', 'comments', function (user, posts, comments) {
+  ep.all('user', 'posts', 'comments',
+    function (user, posts, comments) {
     callback(null, {
       user: user,
       posts: posts,
@@ -22,8 +23,7 @@ function get(callback) {
 }
 
 get(function (err, res) {
-  if (err) {
-    return console.error(err);
-  }
-  console.log(res);
+  err
+  ? console.error(err.stack)
+  : console.log(res);
 });

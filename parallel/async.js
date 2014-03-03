@@ -3,33 +3,32 @@
 var async = require('async');
 var proxy = require('./proxy');
 
-function getPostsAndComments(user, cb) {
-  async.parallel([
-    proxy.getPosts.bind(proxy, user),
-    proxy.getComments.bind(proxy, user)
-  ], cb);
-}
 
 function get(callback) {
   async.waterfall([
-    proxy.getUser.bind(proxy),
-    function (user, cb) {
-      var result = {user: user};
-      getPostsAndComments(user, function (err, res) {
-        if (err) {
-          return cb(err);
-        }
-        result.posts = res[0];
-        result.comments = res[1];
-        cb(null, result);
-      });
-    }
+    proxy.getUser,
+    getPostsAndComments
   ], callback);
+
+  function getPostsAndComments(user, cb) {
+    async.parallel([
+      proxy.getPosts.bind(proxy, user),
+      proxy.getComments.bind(proxy, user)
+    ], function (err, res) {
+      if (err) {
+        return cb(err);
+      }
+      cb(null, {
+        user: user,
+        posts: res[0],
+        comments: res[1]
+      });
+    });
+  }
 }
 
 get(function (err, res) {
-  if (err) {
-    return console.error(err);
-  }
-  console.log(res);
+  err
+  ? console.error(err.stack)
+  : console.log(res);
 });
