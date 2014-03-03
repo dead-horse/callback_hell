@@ -30,7 +30,6 @@
     "eventproxy": "0.2.7",
     "q": "1.0.0",
     "step": "0.0.5",
-    "thunkify": "0.0.1",
     "thunkify-wrap": "0.0.3"
   },
   "devDependencies": {}
