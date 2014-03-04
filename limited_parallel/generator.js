@@ -1,23 +1,25 @@
+
 var co = require('co');
 var proxy = require('./proxy');
 var fakeuser = require('./fakeuser');
 var parallel = require('co-parallel');
 var thunkify = require('thunkify-wrap');
-
-
 var users = require('./fakeuser');
-var getPost = thunkify(proxy.getPosts);
 
+thunkify(proxy);
 
-function *post(user){
-  // console.log(('GET ' + user + ' post'));
-  return (yield getPost(user));
-}
+var get10UserPost = co(function *(users) {
+  var tasks = users.map(function *(user) {
+    return yield proxy.getPosts(user);
+  });
+  return yield parallel(tasks, 10);
+});
 
+var start = Date.now();
+get10UserPost(users, function(err, res) {
+  err
+  ? console.error(err)
+  : console.log(res);
 
-
-co(function *(){
-  var tasks = users.map(post);
-  var res = yield parallel(tasks, 10);
-  console.log(res);
-})();
+  console.log('total used %d ms', Date.now() - start);
+});
