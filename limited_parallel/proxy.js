@@ -1,6 +1,7 @@
-
+var block = true;
 exports.getPosts = function (user, callback) {
   setTimeout(function () {
     callback(null, {name: user});
-  }, 5);
+  }, block ? 100 : 5);
+  block = false;
 };
