@@ -37,6 +37,7 @@ Examples for callback hell
 
 * [async](https://github.com/dead-horse/callback_hell/blob/master/limited_parallel/async.js)
 * [generator](https://github.com/dead-horse/callback_hell/blob/master/limited_parallel/generator.js)
+* [eventproxy](https://github.com/dead-horse/callback_hell/blob/master/limited_parallel/eventproxy.js)
 
 
 ### count_lines

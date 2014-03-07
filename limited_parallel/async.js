@@ -4,11 +4,11 @@ var proxy = require('./proxy');
 var users = require('./fakeuser');
 
 //a limited parallel function
-function get10UserPost(users, cbk){
-  var tasks = users.map(function(user){
+function get10UserPost(users, callback) {
+  var tasks = users.map(function (user) {
     return async.apply(proxy.getPosts, user);
   });
-  async.parallelLimit(tasks, 10, cbk);
+  async.parallelLimit(tasks, 10, callback);
 }
 
 
