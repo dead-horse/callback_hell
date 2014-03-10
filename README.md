@@ -84,6 +84,7 @@ $ node count_lines/async.js .
 * [Selecting a javascript flow control solution](https://github.com/scriby/asyncblock/wiki/Selecting-a-javascript-flow-control-solution)
 * [Dailyjs -- New Control Flow Libraries](http://dailyjs.com/2012/02/20/new-flow-control-libraries/)
 * [Asynchronous JS: Callbacks, Listeners, Control Flow Libs and Promises](http://sporto.github.io/blog/2012/12/09/callbacks-listeners-promises/)
+* [Managing Node.js Callback Hell with Promises, Generators and Other Approaches](http://strongloop.com/strongblog/node-js-callback-hell-promises-generators/)
 
 ## More
 
