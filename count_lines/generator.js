@@ -1,5 +1,5 @@
 
-var fs = require('co-fs');
+var fs = require('mz/fs');
 var path = require('path');
 var co = require('co');
 var utils = require('./utils');

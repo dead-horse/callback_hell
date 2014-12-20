@@ -4,7 +4,8 @@
   "description": "callback hell examples",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autod": "./node_modules/.bin/autod -w --prefix='~' --semver=co@3"
   },
   "repository": {
     "type": "git",
@@ -23,17 +24,17 @@
   },
   "homepage": "https://github.com/dead-horse/callback_hell",
   "dependencies": {
-    "async": "0.2.10",
-    "bagpipe": "0.3.5",
-    "co": "3.0.4",
-    "co-fs": "1.1.1",
-    "co-parallel": "1.0.0",
-    "eventproxy": "0.3.0",
-    "q": "1.0.0",
-    "step": "0.0.5",
-    "thunkify-wrap": "0.0.5"
+    "async": "~0.9.0",
+    "bagpipe": "~0.3.5",
+    "co": "~3.1.0",
+    "co-parallel": "~1.0.0",
+    "eventproxy": "~0.3.1",
+    "mz": "~1.2.0",
+    "q": "~1.1.2",
+    "step": "~0.0.5",
+    "thenify-all": "~1.1.0"
   },
   "devDependencies": {
-
+    "autod": "~1.1.4"
   }
 }

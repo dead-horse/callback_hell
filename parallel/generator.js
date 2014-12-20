@@ -1,9 +1,9 @@
 
-var thunkify = require('thunkify-wrap');
+var promisify = require('thenify-all');
 var co = require('co');
 var proxy = require('./proxy');
 
-proxy = thunkify(proxy);
+proxy = promisify(proxy);
 
 
 var get = co(function *_get() {
